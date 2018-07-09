@@ -184,14 +184,18 @@ console.log('pixelFontSize: ' + pixelFontSize);
               evt = (evt) ? evt : ((window.event) ? event : null);
               if (evt) {
                   switch (evt.keyCode) {
-                      case 37:
+                      case 37: //<-
                           pageHandler.prevPage();
                           break;    
-                      case 39:
+                      case 39: //->
                           pageHandler.nextPage();
                           break;    
-                      case 67:
+                      case 67: //c
+			if(document.getElementById('contents').style.display === 'block') {
+			  document.getElementById('contents').style.display = 'none';
+			} else {
                           document.getElementById('contents').style.display = 'block';
+			}
                           break;
                    }
               }
